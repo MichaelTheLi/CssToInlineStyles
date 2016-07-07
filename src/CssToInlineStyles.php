@@ -121,7 +121,7 @@ class CssToInlineStyles
      */
     protected function getHtmlFromDocument(\DOMDocument $document)
     {
-        $xml = $document->saveXML(null, LIBXML_NOEMPTYTAG);
+        $xml = $document->saveHTML();
 
         $html = preg_replace(
             '|<\?xml (.*)\?>|',
