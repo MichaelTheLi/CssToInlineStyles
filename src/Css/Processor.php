@@ -50,7 +50,7 @@ class Processor
     private function doCleanup($css)
     {
         // remove media queries
-        $css = preg_replace('/@media [^{]*{([^{}]|{[^{}]*})*}/', '', $css);
+        $css = preg_replace('/@media [^{]*({(?>[^{}]+|(?1))*})/', '', $css);
 
         $css = str_replace(array("\r", "\n"), '', $css);
         $css = str_replace(array("\t"), ' ', $css);
